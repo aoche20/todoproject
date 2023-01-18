@@ -1,0 +1,65 @@
+{% extends "todo/base.html" %}
+
+{% block body %}
+<div class="row d-flex justify-content-center container">
+    <div class="col-md-8">
+      <div class="card-hover-shadow-2x mb-3 card">
+        <div class="card-header-tab card-header">
+          <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
+              class="fa fa-tasks"></i>&nbsp;Créer une tâche</div>
+          
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="scroll-area-sm">
+                <perfect-scrollbar class="ps-show-limits">
+                  <div style="position: static;" class="ps ps--active-y">
+                    <div class="ps-content">
+                      <ul class=" list-group list-group-flush">
+                        <li class="list-group-item">
+                          <div class="todo-indicator bg-warning"></div>
+                          <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                              <div class="widget-content-left mr-2">
+                                <div class="custom-checkbox custom-control">
+                                  <input class="form-control form-control-lg" type="text" placeholder="Titre tache"name="title">
+                                  
+         
+                                  </div>
+                              </div>
+                              <div class="widget-content-left mr-2">
+                                  <div class="custom-checkbox custom-control">
+                                   
+                  
+                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description'></textarea>
+                                    </div>
+                                </div>
+                                <div class="custom-checkbox custom-control">
+                                  <input class="custom-control-input"
+                                    id="exampleCustomCheckbox12" type="checkbox" name="completed"/><label class="custom-control-label"
+                                    for="exampleCustomCheckbox12">&nbsp;Completed</label>
+                                  </div>
+                          
+                           
+                            </div>
+                          </div>
+                        </li>
+                        
+                       
+                     
+                       
+      
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </perfect-scrollbar>
+              </div>
+              <div class="d-block text-right card-footer"><button class="mr-2 btn btn-link btn-sm">Cancel</button><button
+                class="btn btn-primary" type="submit">Créer</button></div>
+        </form>
+        
+      </div>
+    </div>
+    </div>
+{% endblock body %}
